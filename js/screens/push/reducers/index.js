@@ -5,6 +5,7 @@
 import t from '../actions/actionTypes'
 
 import { miscColors } from '../colors'
+import { catImages } from '../images'
 
 function generateRandomColors () {
   let randomColors = []
@@ -17,9 +18,17 @@ function generateRandomColors () {
   return randomColors
 }
 
+function pickRandomImage () {
+  let maxVal = catImages.length-1
+  let minVal = 0
+  let randomValue = Math.round((Math.random() * (maxVal - minVal) + minVal))
+  return catImages[randomValue]
+}
+
 const defaultState = {
   screens: [{
-    colors: generateRandomColors ()
+    colors: generateRandomColors (),
+    image: pickRandomImage ()
   }]
 }
 
@@ -31,6 +40,7 @@ const pushReducer = (state = defaultState, action) => {
       let screens = state.screens
       screens.map((screen) => {
         screen.colors = generateRandomColors ()
+        screen.image = pickRandomImage ()
       })
       return Object.assign({}, state, {
         screens: screens
@@ -47,10 +57,10 @@ const pushReducer = (state = defaultState, action) => {
         // let randomValue = (0, miscColors.length) => (Math.random() * (maxVal - minVal) + minVal)
 
         let randomColors = generateRandomColors()
-
+        let image = pickRandomImage ()
         let screen = {
-          // name: name,
-          colors: randomColors
+          colors: randomColors,
+          image : image
         }
         screens.push(screen)
         return Object.assign({}, state, {

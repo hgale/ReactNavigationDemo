@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Image } from 'react-native'
 import { connect } from 'react-redux'
 
 import Button from './button'
@@ -12,7 +12,8 @@ class PushScreen extends React.Component {
     title: 'Screen'
   }
   render() {
-    let { name, colors, navigation, pushScreen, updateScreens } = this.props
+    let { name, colors, navigation, pushScreen, updateScreens, image } = this.props
+    let uri = image.big
     let colorViews = []
     colors.map((color, index) => {
       colorViews.push(<View key={index} style={[style.colorView, {backgroundColor: color}]} />)
@@ -23,6 +24,7 @@ class PushScreen extends React.Component {
         <View style={style.colors}>
           {colorViews}
         </View>
+        <Image style={style.imageContainer} source={{uri:uri}} />
         <Button text={'Push New Screen'}
           action={() => {
             pushScreen()
@@ -60,7 +62,8 @@ const mapStateToProps = (state, props) => {
   let screen = screens[name]
   return {
     name: name,
-    colors: screen.colors
+    colors: screen.colors,
+    image: screen.image
   }
 }
 

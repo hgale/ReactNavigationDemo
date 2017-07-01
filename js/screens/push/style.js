@@ -21,6 +21,13 @@ export default StyleSheet.create({
     height: 80,
     margin: 10
   },
+  imageContainer: {
+    height: 200,
+    width: 200,
+    margin: 15,
+    resizeMode: 'cover',
+    justifyContent:'flex-end'
+  },
   button: {
     height: 46,
     width: 150,

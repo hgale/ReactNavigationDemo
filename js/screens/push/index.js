@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import Button from './button'
 
-import { pushScreen, updateScreen } from './actions/'
+import { pushScreen, updateScreens } from './actions/'
 import style from './style'
 
 class PushScreen extends React.Component {
@@ -12,7 +12,7 @@ class PushScreen extends React.Component {
     title: 'Screen'
   }
   render() {
-    let { name, colors, navigation, pushScreen } = this.props
+    let { name, colors, navigation, pushScreen, updateScreens } = this.props
     let colorViews = []
     colors.map((color, index) => {
       colorViews.push(<View key={index} style={[style.colorView, {backgroundColor: color}]} />)
@@ -23,11 +23,13 @@ class PushScreen extends React.Component {
         <View style={style.colors}>
           {colorViews}
         </View>
-        <Button text={'Push'}
+        <Button text={'Push New Screen'}
           action={() => {
             pushScreen()
             navigation.navigate('PushScreen', {name: name+1})
           }}/>
+        <Button text={'Update All Screens'}
+          action={updateScreens}/>
       </View>
     )
   }
@@ -35,7 +37,8 @@ class PushScreen extends React.Component {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    pushScreen: () => dispatch(pushScreen())
+    pushScreen: () => dispatch(pushScreen()),
+    updateScreens: () => dispatch(updateScreens())
   }
 }
 

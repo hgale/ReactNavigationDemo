@@ -3,5 +3,5 @@
  */
  export default {
    PUSH_SCREEN: 'PUSH_SCREEN',
-   UPDATE_SCREEN: 'UPDATE_SCREEN'
+   UPDATE_SCREENS: 'UPDATE_SCREENS'
  }

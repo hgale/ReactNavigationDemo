@@ -7,9 +7,9 @@ import style from './style.js'
 const Button = (props) => {
   return (
     <TouchableOpacity
-      style={style.doneButton}
+      style={style.button}
       onPress={props.action}>
-      <Text style={style.doneButtonTextLight}>{props.text}</Text>
+      <Text style={style.buttonTextLight}>{props.text}</Text>
     </TouchableOpacity>
   )
 }

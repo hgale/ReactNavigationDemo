@@ -4,14 +4,12 @@
 import t from './actionTypes'
 
 /**
- * Update screen with new data
+ * Regenerate data for all screens
  */
-export function updateScreen (screen) {
-  if (!screen) return
+export function updateScreens () {
   return (dispatch) => {
     dispatch({
-      type: t.UPDATE_SCREEN,
-      screen
+      type: t.UPDATE_SCREENS
     })
   }
 }

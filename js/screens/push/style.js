@@ -21,9 +21,9 @@ export default StyleSheet.create({
     height: 80,
     margin: 10
   },
-  doneButton: {
+  button: {
     height: 46,
-    width: 80,
+    width: 150,
     borderWidth: 1,
     borderRadius: 4,
     borderColor: 'black',
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     margin: 5
   },
-  doneButtonTextLight: {
+  buttonTextLight: {
     color: 'black',
     fontSize: 14,
   }

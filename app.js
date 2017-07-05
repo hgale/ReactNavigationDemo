@@ -16,7 +16,9 @@ import configureStore from './store'
 const store = configureStore()
 
 export const AppNavigator = StackNavigator({
-  PushScreen: { screen: PushScreen }
+  PushScreen: {
+    screen: PushScreen
+  }
 });
 
 

@@ -46,6 +46,14 @@ const pushReducer = (state = defaultState, action) => {
         screens: screens
       })
     }
+    case t.POP_SCREEN:
+     {
+        let screens = state.screens
+        screens.pop()
+        return Object.assign({}, state, {
+          screens: screens
+        })
+     }
     case t.PUSH_SCREEN:
       {
         // 1) Pull out the list of existing screens

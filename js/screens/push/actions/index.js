@@ -24,3 +24,14 @@ export function pushScreen () {
     })
   }
 }
+
+/**
+ * Pop a screen
+ */
+export function popScreen () {
+  return (dispatch) => {
+    dispatch({
+      type: t.POP_SCREEN
+    })
+  }
+}
